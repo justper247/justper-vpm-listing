@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add Justper Packages to VCC</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #15171a; color: #f4f4f5; }
+    main { width: min(620px, calc(100% - 32px)); margin: 96px auto; text-align: center; }
+    p { color: #b8bcc5; line-height: 1.5; }
+    a.button { display: inline-block; margin: 20px 0; padding: 14px 22px; border-radius: 9px; background: #1769aa; color: white; font-weight: 700; text-decoration: none; }
+    code { display: block; overflow-wrap: anywhere; background: #24272c; padding: 12px; border-radius: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Opening VCC</h1>
+    <p>Your browser may ask for permission to open VRChat Creator Companion.</p>
+    <a class="button" id="open-vcc" href="vcc://vpm/addRepo?url=https%3A%2F%2Fjustper247.github.io%2Fjustper-vpm-listing%2Findex.json">Open VCC</a>
+    <p>If VCC does not open, add this source manually:</p>
+    <code>https://justper247.github.io/justper-vpm-listing/index.json</code>
+  </main>
+  <script>
+    window.addEventListener('load', () => {
+      document.getElementById('open-vcc').click();
+    });
+  </script>
+</body>
+</html>
+
