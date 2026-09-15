@@ -2,9 +2,14 @@ name: Build Repo Listing
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
   push:
     branches: main
-    paths: source.json
+    paths:
+      - source.json
+      - Website/**
+      - .github/workflows/build-listing.yml
 
 permissions:
   contents: read
@@ -61,4 +66,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-

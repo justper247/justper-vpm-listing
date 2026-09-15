@@ -29,6 +29,7 @@
     <p>Add this address to VCC or ALCOM once. You can then install and update each tool separately.</p>
     <div class="source">
       <code id="source-url">{{ listingInfo.Url }}</code>
+      <button type="button" onclick="addToVcc()">Add to VCC</button>
       <button type="button" onclick="copySource(this)">Copy</button>
     </div>
 
@@ -44,6 +45,11 @@
     <p class="note">Published by <a href="{{ listingInfo.Author.Url }}">{{ listingInfo.Author.Name }}</a>.</p>
   </main>
   <script>
+    function addToVcc() {
+      const url = document.getElementById('source-url').textContent.trim();
+      window.location.href = `vcc://vpm/addRepo?url=${encodeURIComponent(url)}`;
+    }
+
     async function copySource(button) {
       await navigator.clipboard.writeText(document.getElementById('source-url').textContent.trim());
       button.textContent = 'Copied';
@@ -51,4 +57,3 @@
   </script>
 </body>
 </html>
-
