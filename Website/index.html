@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ listingInfo.Name }}</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; background: #15171a; color: #f4f4f5; }
+    main { width: min(760px, calc(100% - 32px)); margin: 64px auto; }
+    h1 { margin-bottom: 8px; }
+    .subtitle { color: #b8bcc5; margin-top: 0; }
+    .source { display: flex; gap: 8px; margin: 28px 0 40px; }
+    code { flex: 1; overflow-wrap: anywhere; background: #24272c; padding: 12px; border-radius: 8px; }
+    button { border: 0; border-radius: 8px; padding: 0 18px; background: #5f8cff; color: white; cursor: pointer; font-weight: 600; }
+    .package { display: block; background: #202329; border: 1px solid #343842; border-radius: 12px; padding: 18px; margin: 12px 0; }
+    .package h2 { margin: 0 0 6px; font-size: 18px; }
+    .package p { margin: 0 0 10px; color: #c8cbd2; }
+    .id { color: #9298a3; font-size: 13px; }
+    .note { color: #b8bcc5; margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>{{ listingInfo.Name }}</h1>
+    <p class="subtitle">{{ listingInfo.Description }}</p>
+
+    <h2>Package source</h2>
+    <p>Add this address to VCC or ALCOM once. You can then install and update each tool separately.</p>
+    <div class="source">
+      <code id="source-url">{{ listingInfo.Url }}</code>
+      <button type="button" onclick="copySource(this)">Copy</button>
+    </div>
+
+    <h2>Available tools</h2>
+    {{~ for package in packages ~}}
+      <section class="package">
+        <h2>{{ package.DisplayName }}</h2>
+        <p>{{ package.Description }}</p>
+        <div class="id">{{ package.Name }}</div>
+      </section>
+    {{~ end ~}}
+
+    <p class="note">Published by <a href="{{ listingInfo.Author.Url }}">{{ listingInfo.Author.Name }}</a>.</p>
+  </main>
+  <script>
+    async function copySource(button) {
+      await navigator.clipboard.writeText(document.getElementById('source-url').textContent.trim());
+      button.textContent = 'Copied';
+    }
+  </script>
+</body>
+</html>
+
