@@ -1,0 +1,20 @@
+{
+  "name": "Justper Packages",
+  "id": "com.justper.packages",
+  "url": "https://justper247.github.io/justper-vpm-listing/index.json",
+  "author": {
+    "email": "justper247@users.noreply.github.com",
+    "name": "Justper",
+    "url": "https://github.com/justper247"
+  },
+  "description": "Unity tools by Justper for VRChat avatar creators.",
+  "infoLink": {
+    "url": "https://github.com/justper247/justper-vpm-listing",
+    "text": "View on GitHub"
+  },
+  "githubRepos": [
+    "justper247/justper-blendshape-mesh-merge",
+    "justper247/justper-portable-blendshape-injector"
+  ]
+}
+
