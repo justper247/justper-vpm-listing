@@ -1,16 +1,16 @@
 # Justper Package Source
 
-This source provides Justper Unity tools for VCC and ALCOM.
+Install Justper Unity tools with VCC or ALCOM.
 
 [![Add to VCC](https://img.shields.io/badge/Add_to_VCC-1769aa?style=for-the-badge)](https://justper247.github.io/justper-vpm-listing/add.html)
 
-The **Add to VCC** button works with VCC and ALCOM.
+The button works with both apps.
 
-Or add this package source manually:
+Source URL:
 
 `https://justper247.github.io/justper-vpm-listing/index.json`
 
-Available packages:
+Tools:
 
 - Justper BlendShape Mesh Merge
 - Justper Portable BlendShape Injector
